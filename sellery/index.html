@@ -1,0 +1,43 @@
+<html>
+<head>
+   <link rel="stylesheet" href="./css/ui.css">
+</head>
+<body>
+    <section id="sec1" class="sec" data-idx="1">
+       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1923.157 259.979"><g id="wave_line" transform="translate(.863 -507.258)"><path id="green" d="M0 474.817s76.609-131.155 232.144-55.539 94.98 278.17 357.007 99.342 367.432-201.94 484.883-178.828 70.076 147.735 274.329 110.108 37.9 148.073 212.94 93.061 284.2-267.416 360.251-183.542" data-name="Path 733" transform="translate(0 175.886)" class="cls-1" stroke-dasharray="2264.963623046875" style="stroke-dashoffset: 0px;"></path></g></svg>
+    </section>
+    
+    <section id="sec2" class="sec" data-idx="2">
+        <div>나는 <input type="number" class="day" placeholder="급여일" value="30">일에 <br>
+             <input type="text" class="money" placeholder="월급 실수령액" value="3,000,000"> 원 받는다
+        </div>
+    </section>
+    
+    <section id="sec3" class="sec" data-idx="3">
+        <div>오늘 출근해서,<br>
+            <span id="dailySalary"></span>원 벌었다
+            <span id="beforeWork"></span>
+        </div>
+        <div id="dailySalaryGage">
+            일급 게이지가 차고 있어요! 오늘도 힘내세요 :)<br>
+            <progress value="0" max="1"></progress><br>
+            <span>0.00%</span>
+        </div>
+    </section>
+
+    <!--월 계산-->
+    <section id="sec4" class="sec" data-idx="4">
+        <div>이번 달도<br>
+            <span id="monthlySalary"></span>원 버텼다
+        </div>
+        <div id="monthlySalaryGage">
+            이번 달도 이만큼 버텼네요! 수고했어요 :3<br>
+            <progress value="0" max="1"></progress><br>
+            <span>0.00%</span>
+        </div>
+    </section>
+
+    <script src="./js/jquery-3.2.1.min.js"></script>
+    <script src="./js/ui.js"></script>
+</body>
+</html>
