@@ -1,3 +1,5 @@
+var canScroll = true;
+
 $(document).ready(function(){
     
     if($(".day").val() != "" && $(".money") ){
@@ -164,31 +166,26 @@ $(document).ready(function(){
         }
     });
     
-    
-var canScroll = true;    
+
     $(".sec").on("mousewheel", function(event){
-        
-        event.stopPropagation();
         event.preventDefault(); 
         
-        if(canScroll == false){
+        //mousewheel의 종료 시점은 알수가 없다.
+        if(canScroll == true){
+            canScroll = false;
+            console.log("can scroll");
+        }
+        else{
             console.log("can't scroll");
             return false;
         }
-        
-        canScroll = false;
-        
-        
-        
-        console.log("section mousewheel");
-        
+
         var no_of_sec = $("section").length;
         var idx = $(this).data("idx");
         
         //스크롤-내리기
         if(event.originalEvent.wheelDelta <= 0){
             console.log("down");
-            
             gotoSec(getNextSec(no_of_sec, idx));
         }
         //스크롤-올리기
@@ -196,14 +193,14 @@ var canScroll = true;
             console.log("upper");
             gotoSec(getPrevSec(no_of_sec, idx));
         }
-        
         setTimeout(function(){
+            canScroll = true;
             console.log("setTimeout");
-            canScroll = true;    
-        }, 100);
+        }, 700);
         
     });
 });
+
 
 function getVirtualDomWidth(value){
     $("body").append("<div id='virtual_dom'>" + value + "</div>");
